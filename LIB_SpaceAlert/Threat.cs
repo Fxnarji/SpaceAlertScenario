@@ -1,23 +1,30 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
 
 namespace LIB_SpaceAlert
 {
     public class Threat : Event
     {
-        public int offset;
-        public enum Zone
+
+        public Threat(Random rnd)
         {
-            blue,
-            white,
-            red,
-            intern
+            int index = rnd.Next(2);
+            color = (Color)index;
+            text = "new ";
+            string[] threats = new string[] {
+                "unconfirmed",
+                "internal",
+                "serious",
+                ""
+            };
+
+            text += threats[rnd.Next(threats.Length)];
+            text += " threat detected! In Room: ";
+            //give random Freedom color from red, blue, white
         }
 
-        public enum status
+        public void randomize()
         {
-            unconfirmed,
-            confirmed,
-            serious
+
         }
     }
 }

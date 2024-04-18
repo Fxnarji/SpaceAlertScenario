@@ -1,29 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices.WindowsRuntime;
+using System.Xml.Schema;
 
 namespace LIB_SpaceAlert
 {
-
     public abstract class Event
     {
-        private int time
-        {  get; set; }
-
-        public enum color
+        public int slot;
+        public int length = 1;
+        public enum Color
         {
-            white,
-            pink,
-            red,
-            yellow,
-            blue,
-            green,
-            grey
+            Red,
+            Blue,
+            White,
+            Green,
+            Internal
         }
 
-        private string text
-        { get; set; }
+        public Color color = new Color();
+
+        public string text;
+        public string toString()
+        {
+            return slot + " " + text + " " + color;
+        }
     }
 }

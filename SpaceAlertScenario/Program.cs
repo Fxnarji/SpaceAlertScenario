@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using LIB_SpaceAlert;
@@ -7,15 +8,14 @@ namespace SpaceAlertScenario
 {
     internal partial class Program
     {
-        static void Main(string[] args)
+
+
+        public static void Main(string[] args)
         {
-            NormalMode mode = new NormalMode();
-
-            Mission mission = new Mission();
-
-            mission = mode.Generate();
-
-            mission.Print();
+            MissionGenerator mg = new MissionGenerator();
+            mg.generatePhases();
+            mg.printAll();
+            Console.ReadKey();
         }
     }
 }

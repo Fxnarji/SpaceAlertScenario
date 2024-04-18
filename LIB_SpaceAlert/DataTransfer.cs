@@ -1,6 +1,6 @@
 ﻿namespace LIB_SpaceAlert
 {
-    public class CommFail
+    public class DataTransfer : Event
     {
 
     }

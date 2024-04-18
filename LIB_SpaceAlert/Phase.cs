@@ -1,13 +1,43 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LIB_SpaceAlert
 {
-    public class Phase
+    public partial class phase
     {
-        private int start;
-        private int duration;
-        private List<Event> events 
-        {  get; set; }
+        public List<Event> events = new List<Event>();
+        public 
+        public void consolePrinter()
+        {
+            foreach(Event e in events)
+            {
+                switch (e.color)
+                {
+                    case (Event.Color.Red):
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        break;
 
+                    case (Event.Color.Internal):
+                        Console.ForegroundColor = ConsoleColor.White;
+                        break;
+
+                    case (Event.Color.Blue):
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        break;
+
+                    case (Event.Color.Green):
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        break;
+
+                    default:
+                        Console.ForegroundColor = ConsoleColor.White;
+                        break;
+
+
+
+                }
+                Console.WriteLine(e.toString());
+            }
+        }
     }
 }
