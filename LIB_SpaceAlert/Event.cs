@@ -11,9 +11,9 @@ namespace LIB_SpaceAlert
         {
             Red,
             Blue,
-            White,
+            Internal,
             Green,
-            Internal
+            Yellow
         }
 
         public Color color = new Color();
@@ -21,7 +21,7 @@ namespace LIB_SpaceAlert
         public string text;
         public string toString()
         {
-            return slot + " " + text + " " + color;
+            return slot + " " + text;
         }
     }
 }

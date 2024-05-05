@@ -7,7 +7,7 @@ namespace LIB_SpaceAlert
 
         public Threat(Random rnd)
         {
-            int index = rnd.Next(2);
+            int index = rnd.Next(3);
             color = (Color)index;
             text = "new ";
             string[] threats = new string[] {
@@ -17,8 +17,8 @@ namespace LIB_SpaceAlert
                 ""
             };
 
-            text += threats[rnd.Next(threats.Length)];
-            text += " threat detected! In Room: ";
+            text += threats[index];
+            text += " threat detected!";
             //give random Freedom color from red, blue, white
         }
 

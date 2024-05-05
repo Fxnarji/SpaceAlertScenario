@@ -5,8 +5,7 @@ namespace LIB_SpaceAlert
 {
     public partial class phase
     {
-        public List<Event> events = new List<Event>();
-        public 
+        public List<Event> events = new List<Event>(); 
         public void consolePrinter()
         {
             foreach(Event e in events)
@@ -27,6 +26,10 @@ namespace LIB_SpaceAlert
 
                     case (Event.Color.Green):
                         Console.ForegroundColor = ConsoleColor.Green;
+                        break;
+
+                    case (Event.Color.Yellow):
+                            Console.ForegroundColor = ConsoleColor.Yellow;
                         break;
 
                     default:

@@ -9,13 +9,23 @@ namespace LIB_SpaceAlert
     public class IncommingData : Event
     {
         
-
-        public IncommingData()
+        public IncommingData(Random rnd, bool incomming = false)
         {
-            Random rnd  = new Random();
-            text = "incomming data...";
-            color = Color.White;
+            string[] variants = new string[]
+            {
+                "incomming data...",
+                "communication lost",
+                "communication restored",
+                "data transfer"
+            };
+            text = variants[rnd.Next(variants.Length)];
+            color = Color.Yellow;
             slot = 0;
+
+            if (incomming)
+            {
+                text = "incomming data...";
+            }
         }
     }
 }
